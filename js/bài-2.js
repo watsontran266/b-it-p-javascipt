@@ -1,23 +1,35 @@
-const tinhTienDien = (soKw) => {
+document.getElementById("btn-money").addEventListener("click", () => {
+  let hoTen = document.getElementById("input-name").value;
+  let soKw = (document.getElementById("input-soKw").value);
+  let result = document.getElementById("result-money");
+
   let tongTien = 0;
 
-  if (soKw <= 50) {
-    tongTien = soKw * 500;
-  } 
-  else if (soKw <= 100) {
-    tongTien = 25000 + (soKw - 50) * 650;
-  } 
-  else if (soKw <= 200) {
-    tongTien = 25000 + 32500 + (soKw - 100) * 850;
-  } 
-  else if (soKw <= 350) {
-    tongTien = 25000 + 32500 + 85000 + (soKw - 200) * 1100;
-  } 
-  else {
-    tongTien = 25000 + 32500 + 85000 + 165000 + (soKw - 350) * 1300;
+    if (hoTen === "" || soKw === "") {
+    result.innerText = "👉 Vui lòng nhập đầy đủ họ tên và số kW";
+    return;
   }
 
-  return `Điện năng tiêu thụ ${soKw} kW -> tổng tiền: ${tongTien} VND`;
-};
+if (soKw < 0) {
+  result.innerText = "👉 Số kW không hợp lệ";
+    return;
+  }
+  if (soKw <= 50) {
+    tongTien = soKw * 500;
+  } else if (soKw <= 100) {
+    tongTien = 50 * 500 + (soKw - 50) * 650;
+  } else if (soKw <= 200) {
+    tongTien = 50 * 500 + 50 * 650 + (soKw - 100) * 850;
+  } else if (soKw <= 350) {
+    tongTien = 50 * 500 + 50 * 650 + 100 * 850 + (soKw - 200) * 1100;
+  } else {
+    tongTien =
+      50 * 500 +
+      50 * 650 +
+      100 * 850 +
+      150 * 1100 +
+      (soKw - 350) * 1300;
+  }
 
-console.log(tinhTienDien(247));
+  result.innerText = `👉 Họ tên: ${hoTen}. Tiền điện: ${tongTien} VND`;
+});
