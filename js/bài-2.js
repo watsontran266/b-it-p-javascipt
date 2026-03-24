@@ -31,5 +31,5 @@ if (soKw < 0) {
       (soKw - 350) * 1300;
   }
 
-  result.innerText = `👉 Họ tên: ${hoTen}. Tiền điện: ${tongTien} VND`;
+  result.innerText = `👉 Họ tên: ${hoTen}. Tiền điện: ${tongTien.toLocaleString()} VND`;
 });
