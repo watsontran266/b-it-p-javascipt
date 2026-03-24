@@ -9,37 +9,46 @@
   <body class="bg-[#EDF2F9] p-6">
     <h1 class="text-center text-3xl font-bold text-pink-400">Bài Tập JS</h1>
     <div class="mx-auto max-w-3xl bg-[#DBF1E5] rounded-lg p-6">
-      <!-- bài 1 : quản lý quyển sinh  -->
+      <!-- bài 1 : quản lý 1uyển sinh  -->
       <div class="bg-blue-200 rounded-lg mt-6 p-4">
         <h2 class="font-bold text-indigo-500 mb-2">
-          bài 1 : quản lý quyển sinh
+          bài 1 : quản lý tuyển sinh
         </h2>
+        
         <input
-          type="text"
+          type="number"
           id="input-point"
+          name="point"
           placeholder="Nhập điểm chuẩn"
           class="w-full border border-indigo-600 rounded p-3 mt-5 mb-5"
         />
         <!-- thẻ p để hiển thị lỗi nếu có -->
         <p class="hidden bg-red-200 text-white p-3 rounded-lg mt-1"></p>
-        <input
-          type="text"
-          id="input-area"
-          placeholder="chọn khu vực"
-          class="w-full border border-indigo-600 rounded p-3 mt-5 mb-5"
-        />
+        <select
+          id="area"
+          name="area"
+          class="border-indigo-600 text-gray-500 border rounded p-3 mt-5 mb-5" required
+        >
+          <option>Chọn khu vực</option>
+          <option>A</option>
+          <option>B</option>
+          <option>C</option>
+        </select>
+        <!-- thẻ p để hiển thị lỗi nếu có -->
+        <p class="hidden bg-red-200 text-white p-3 rounded-lg mt-1"></p>
+        <select
+          id="type"
+          class="border-indigo-600 text-gray-500 border rounded p-3 mt-5 mb-5" required
+        >
+          <option>Chọn loại đối tượng</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+        </select>
         <!-- thẻ p để hiển thị lỗi nếu có -->
         <p class="hidden bg-red-200 text-white p-3 rounded-lg mt-1"></p>
         <input
-          type="text"
-          id="input-subject"
-          placeholder="chọn đối tượng"
-          class="w-full border border-indigo-600 rounded p-3 mt-5 mb-5"
-        />
-        <!-- thẻ p để hiển thị lỗi nếu có -->
-        <p class="hidden bg-red-200 text-white p-3 rounded-lg mt-1"></p>
-        <input
-          type="text"
+          type="number"
           id="input-numb1"
           placeholder="Điểm môn thứ 1"
           class="w-full border border-indigo-600 rounded p-3 mt-5 mb-5"
@@ -47,7 +56,7 @@
         <!-- thẻ p để hiển thị lỗi nếu có -->
         <p class="hidden bg-red-200 text-white p-3 rounded-lg mt-1"></p>
         <input
-          type="text"
+          type="number"
           id="input-numb2"
           placeholder="Điểm môn thứ 2"
           class="w-full border border-indigo-600 rounded p-3 mt-5 mb-5"
@@ -55,7 +64,7 @@
         <!-- thẻ p để hiển thị lỗi nếu có -->
         <p class="hidden bg-red-200 text-white p-3 rounded-lg mt-1"></p>
         <input
-          type="text"
+          type="number"
           id="input-numb3"
           placeholder="Điểm môn thứ 3"
           class="w-full border border-indigo-600 rounded p-3 mt-5 mb-5"
@@ -63,13 +72,15 @@
         <!-- thẻ p để hiển thị lỗi nếu có -->
         <p class="hidden bg-red-200 text-white p-3 rounded-lg mt-1"></p>
         <button
-          id="btn-salary"
+          id="btn-result"
           class="bg-indigo-400 text-white p-2 rounded-lg mt-2"
         >
           Kết Quả
         </button>
         <!-- thẻ p để hiển thị lỗi nếu có -->
-        <p class="bg-[#DBF1E5] text-white p-3 rounded-lg mt-1 p-4">👉</p>
+        <p id="result" class="bg-[#DBF1E5] text-black p-3 rounded-lg mt-1 p-4">
+          👉
+        </p>
       </div>
       <!-- bài 2 : tính tiền điện  -->
       <div class="bg-blue-200 rounded-lg mt-6 p-4">
@@ -97,82 +108,111 @@
           Tính Tiền Điện
         </button>
         <!-- thẻ p để hiển thị lỗi nếu có -->
-        <p class="bg-[#DBF1E5] text-white p-3 rounded-lg mt-1 p-4">👉</p>
+        <p
+          id="result-money"
+          class="bg-[#DBF1E5] text-black p-3 rounded-lg mt-1 p-4"
+        >
+          👉
+        </p>
       </div>
       <!-- bài 3 : tính thu nhập cá nhân -->
       <div class="bg-blue-200 rounded-lg mt-6 p-4">
         <h2 class="font-bold text-indigo-500 mb-2">
           bài 3 : tính thu nhập cá nhân
         </h2>
+
         <input
           type="text"
           id="input-name2"
           placeholder="Nhập họ tên"
           class="w-full border border-indigo-600 rounded p-3 mt-5 mb-5"
         />
-        <!-- thẻ p để hiển thị lỗi nếu có -->
         <p class="hidden bg-red-200 text-white p-3 rounded-lg mt-1"></p>
+
         <input
           type="text"
           id="input-summoney"
           placeholder="Tổng thu nhập năm"
           class="w-full border border-indigo-600 rounded p-3 mt-5 mb-5"
         />
-        <!-- thẻ p để hiển thị lỗi nếu có -->
         <p class="hidden bg-red-200 text-white p-3 rounded-lg mt-1"></p>
+
         <input
           type="text"
           id="input-person"
           placeholder="Số người phụ thuộc"
           class="w-full border border-indigo-600 rounded p-3 mt-5 mb-5"
         />
-        <!-- thẻ p để hiển thị lỗi nếu có -->
         <p class="hidden bg-red-200 text-white p-3 rounded-lg mt-1"></p>
+
         <button
           id="btn-tax"
           class="bg-indigo-400 text-white p-2 rounded-lg mt-2"
         >
           Kết Quả Thuế
         </button>
-        <!-- thẻ p để hiển thị lỗi nếu có -->
-        <p class="bg-[#DBF1E5] text-white p-3 rounded-lg mt-1 p-4">👉</p>
+
+        <p
+          id="result-tax"
+          class="bg-[#DBF1E5] text-black p-3 rounded-lg mt-1 p-4"
+        >
+          👉
+        </p>
       </div>
       <!-- bài 4 : tính tiền cáp  -->
       <div class="bg-blue-200 rounded-lg mt-6 p-4">
-        <h2 class="font-bold text-indigo-500 mb-2">
-            bài 4 : tính tiền cáp
-        </h2>
-        <select class="border-indigo-600 text-gray-500 border rounded p-3 mt-5 mb-5">
-          <option>Chọn loại khách hàng</option>
-          <option>Nhà Dân</option>
-          <option>Doanh Nghiệp</option>
+        <h2 class="font-bold text-indigo-500 mb-2">bài 4 : tính tiền cáp</h2>
+
+        <select
+          id="customer-type"
+          class="border-indigo-600 text-gray-500 border rounded p-3 mt-5 mb-5"
+        >
+          <option value="">Chọn loại khách hàng</option>
+          <option value="NhaDan">Nhà Dân</option>
+          <option value="DoanhNghiep">Doanh Nghiệp</option>
         </select>
-        <!-- thẻ p để hiển thị lỗi nếu có -->
         <p class="hidden bg-red-200 text-white p-3 rounded-lg mt-1"></p>
+
         <input
           type="text"
           id="input-clientid"
           placeholder="Nhập mã khách hàng"
           class="w-full border border-indigo-600 rounded p-3 mt-5 mb-5"
         />
-        <!-- thẻ p để hiển thị lỗi nếu có -->
         <p class="hidden bg-red-200 text-white p-3 rounded-lg mt-1"></p>
+
+        <!-- bọc ô số kết nối vào div để ẩn/hiện -->
+        <div id="connect-group" class="hidden">
+          <input
+            type="text"
+            id="input-connect"
+            placeholder="Số kết nối"
+            class="w-full border border-indigo-600 rounded p-3 mt-5 mb-5"
+          />
+          <p class="hidden bg-red-200 text-white p-3 rounded-lg mt-1"></p>
+        </div>
+
         <input
           type="text"
           id="input-channel"
           placeholder="Số kênh cao cấp"
           class="w-full border border-indigo-600 rounded p-3 mt-5 mb-5"
         />
-        <!-- thẻ p để hiển thị lỗi nếu có -->
         <p class="hidden bg-red-200 text-white p-3 rounded-lg mt-1"></p>
+
         <button
           id="btn-bill"
           class="bg-indigo-400 text-white p-2 rounded-lg mt-2"
         >
-         Tính giá cước
+          Tính giá cước
         </button>
-        <!-- thẻ p để hiển thị lỗi nếu có -->
-        <p class="bg-[#DBF1E5] text-white p-3 rounded-lg mt-1 p-4">👉</p>
+
+        <p
+          id="result-bill"
+          class="bg-[#DBF1E5] text-black p-3 rounded-lg mt-1 p-4"
+        >
+          👉
+        </p>
       </div>
     </div>
 
